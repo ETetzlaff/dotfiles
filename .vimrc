@@ -21,6 +21,10 @@ Plugin 'tpope/vim-haml'
 Plugin 'slim-template/vim-slim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'kchmck/vim-coffee-script'
+" Plugin 'jelera/vim-javascript-syntax'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'nathanealkane/vim-indent-guides'
 " Plugin 'garbas/vim-snipmate'
 " Plugin 'magutsushi/tagbar'
 
@@ -53,6 +57,8 @@ set hlsearch
 " Ruby mode
 " autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=3 tabstop=2
 autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Filetype slim setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Filetype coffee setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 " setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " Leader
