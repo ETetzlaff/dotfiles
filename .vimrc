@@ -20,8 +20,9 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tpope/vim-haml'
 Plugin 'slim-template/vim-slim'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'vim-scripts/dbext.vim'
 " Plugin 'jelera/vim-javascript-syntax'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'nathanealkane/vim-indent-guides'
@@ -44,6 +45,8 @@ syntax on
 " let g:molokai_termtrans = 1
 
 " highlight nonText ctermbg=None
+
+set noswapfile
 
 colorscheme seti
 
@@ -80,3 +83,8 @@ nnoremap <C-H> <C-W><C-H>
 " Get rid of colorscheme bg
 syntax enable
 highlight Normal ctermbg=None
+
+
+" MySQL
+let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=zip_codes'
+let g:dbext_default_profile = 'mysql_local'
