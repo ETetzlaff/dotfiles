@@ -9,5 +9,4 @@ function git_upstream() {
   echo "Branch \e[31m$(git rev-parse --abbrev-ref HEAD)\e[39m is \e[33m$(git rev-list --count ${upstream_branch}..) commits\e[39m ahead and \e[33m$(git rev-list --count ..${upstream_branch}) commits\e[39m behind \e[31m${upstream_branch}\e[39m"
 }
 
-
-
+export PIP_REQUIRE_VIRTUALENV=true

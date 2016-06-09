@@ -1,39 +1,59 @@
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath^=/Users/evantetzlaff/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin(expand('/Users/evantetzlaff/.config/nvim/dein'))
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('flazz/vim-colorschemes')
+call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('honza/vim-snippets')
+call dein#add('slim-template/vim-slim')
+call dein#add('tpope/vim-haml')
+call dein#add('bronson/vim-trailing-whitespace')
+call dein#add('Raimondi/delimitMate')
+call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('tpope/vim-rails')
+call dein#add('vim-ruby/vim-ruby')
+call dein#add('ddollar/nerdcommenter')
+call dein#add('scrooloose/syntastic.git')
+call dein#add('scrooloose/nerdtree.git')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('tpope/vim-fugitive')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('vim-airline/vim-airline')
+call dein#add('ryanoasis/vim-devicons')
+
+
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'scrooloose/syntastic.git'
-Plugin 'ddollar/nerdcommenter'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'kien/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'Raimondi/delimitMate'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'tpope/vim-haml'
-Plugin 'slim-template/vim-slim'
-Plugin 'thoughtbot/vim-rspec'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-scripts/dbext.vim'
-Plugin 'sirver/ultisnips.git'
-Plugin 'honza/vim-snippets'
-" Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'nathanealkane/vim-indent-guides'
-" Plugin 'garbas/vim-snipmate'
-" Plugin 'magutsushi/tagbar'
-Plugin 'christoomey/vim-tmux-navigator'
-
-" Plugins need to be added before this line
-call vundle#end()
 filetype plugin indent on
 
 " Terminal settings
@@ -98,3 +118,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
+
+set encoding=utf8
+let g:airline_powerline_fonts = 1
