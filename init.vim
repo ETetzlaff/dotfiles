@@ -142,4 +142,9 @@ nmap <leader>] <Plug>AirlineSelectNextTab
 " Vim Test
 let test#strategy = "neovim"
 let g:test#preserve_screen = 1
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
 
