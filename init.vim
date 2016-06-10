@@ -148,3 +148,4 @@ nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
 
+autocmd BufNewFile,BufRead *.slim set ft=slim
