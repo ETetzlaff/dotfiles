@@ -74,7 +74,7 @@ set noswapfile
 
 set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
 
-colorscheme seti
+colorscheme molokai
 
 syntax enable
 set number
