@@ -19,12 +19,15 @@ brew install neovim
 
 # Dein plugin management
 mkdir -p ~/.config/nvim/
-# mkdir -p ~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s ~/.config/nvim/dein
 
 # Neovim Symlinks
 ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
+
+# Handle fonts for airblade and powerline
 cp ~/dotfiles/fonts/* ~/Library/fonts/.
+# NOTE: Remember to change (Preferences -> Profiles -> Text) Font to Sauce Code
+#         to get devicons working
 
 # Ordinary VIM
 ln -sf ~/dotfiles/.vimrc ~/.vimrc

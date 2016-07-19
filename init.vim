@@ -73,6 +73,8 @@ syntax on
 set noswapfile
 
 set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
+" set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h11
+" set guifont=Inconsolata\ LGC\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono:h11
 
 colorscheme molokai
 
