@@ -1,4 +1,8 @@
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:/usr/local/go/bin"
+export GOPATH="$HOME/Documents/go_stuffs"
+export GOROOT="$HOME/Documents/go_stuffs"
+export PATH="$PATH:/$GOROOT/bin"
 
 
 # Compares current branch against 'dev' branch to see what commits

@@ -35,6 +35,8 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('vim-airline/vim-airline')
 call dein#add('ryanoasis/vim-devicons')
 call dein#add('janko-m/vim-test')
+call dein#add('robbles/logstash')
+call dein#add('fatih/vim-go')
 
 
 " You can specify revision/branch/tag.
@@ -90,6 +92,8 @@ set hlsearch
 autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype slim setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype coffee setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Filetype go setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
+autocmd Filetype javascript setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
 " setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " Leader
