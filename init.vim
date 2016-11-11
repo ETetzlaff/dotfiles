@@ -14,13 +14,10 @@ call dein#begin(expand('/Users/evantetzlaff/.config/nvim/dein'))
 call dein#add('Shougo/dein.vim')
 
 " Add or remove your plugins here:
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
 call dein#add('flazz/vim-colorschemes')
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('honza/vim-snippets')
 call dein#add('slim-template/vim-slim')
-call dein#add('tpope/vim-haml')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('Raimondi/delimitMate')
 call dein#add('ctrlpvim/ctrlp.vim')
