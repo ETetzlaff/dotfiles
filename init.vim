@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/evantetzlaff/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=/Users/evan.tetzlaff/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/Users/evantetzlaff/.config/nvim/dein'))
+call dein#begin(expand('/Users/evan.tetzlaff/.config/nvim/dein'))
 
 " Let dein manage dein
 " Required:
