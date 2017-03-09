@@ -33,7 +33,8 @@ call dein#add('ryanoasis/vim-devicons')
 call dein#add('janko-m/vim-test')
 call dein#add('robbles/logstash')
 call dein#add('fatih/vim-go')
-
+call dein#add('pangloss/vim-javascript')
+call dein#add('isRuslan/vim-es6')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -142,7 +143,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>[ <Plug>AirlineSelectPrevTab
 nmap <leader>] <Plug>AirlineSelectNextTab
 
-" Vim Test
+" Vim Ruby Test
 let test#strategy = "neovim"
 let g:test#preserve_screen = 1
 nmap <silent> <leader>tn :TestNearest<CR>
@@ -150,5 +151,9 @@ nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tv :TestVisit<CR>
+
+" Vim Go Test
+nmap <silent> <leader>got :GoTest<CR>
+nmap <silent> <leader>gotf :GoTestFunc<CR>
 
 autocmd BufNewFile,BufRead *.slim set ft=slim
