@@ -35,6 +35,8 @@ call dein#add('robbles/logstash')
 call dein#add('fatih/vim-go')
 call dein#add('pangloss/vim-javascript')
 call dein#add('isRuslan/vim-es6')
+call dein#add('diepm/vim-rest-console')
+call dein#add('easymotion/vim-easymotion')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -91,6 +93,8 @@ autocmd Filetype slim setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype coffee setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype go setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
 autocmd Filetype javascript setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
+autocmd Filetype rest setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype conf setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " Leader
@@ -108,6 +112,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+nnoremap <leader>gr :GoRun<CR>
 
 " Get rid of colorscheme bg
 syntax enable
@@ -157,3 +162,5 @@ nmap <silent> <leader>got :GoTest<CR>
 nmap <silent> <leader>gotf :GoTestFunc<CR>
 
 autocmd BufNewFile,BufRead *.slim set ft=slim
+
+let g:vrc_allow_get_request_body = 1
