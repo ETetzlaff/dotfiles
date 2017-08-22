@@ -37,6 +37,7 @@ call dein#add('pangloss/vim-javascript')
 call dein#add('isRuslan/vim-es6')
 call dein#add('diepm/vim-rest-console')
 call dein#add('easymotion/vim-easymotion')
+call dein#add('SirVer/ultisnips')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -71,6 +72,9 @@ syntax on
 
 " highlight nonText ctermbg=None
 
+" Python Support
+let g:python_host_prog = '/usr/bin/python2.7'
+
 set noswapfile
 
 set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
@@ -95,6 +99,7 @@ autocmd Filetype go setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftw
 autocmd Filetype javascript setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
 autocmd Filetype rest setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype conf setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " Leader
@@ -164,3 +169,17 @@ nmap <silent> <leader>gotf :GoTestFunc<CR>
 autocmd BufNewFile,BufRead *.slim set ft=slim
 
 let g:vrc_allow_get_request_body = 1
+
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
