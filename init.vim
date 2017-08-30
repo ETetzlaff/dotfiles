@@ -82,7 +82,8 @@ set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
 " set guifont=Inconsolata\ LGC\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono:h11
 
 " colorscheme molokai
-colorscheme seti
+" colorscheme seti
+colorscheme ThemerVim
 
 syntax enable
 set number
@@ -96,7 +97,7 @@ autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype slim setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype coffee setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype go setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
-autocmd Filetype javascript setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
+autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 expandtab smarttab shiftwidth=2
 autocmd Filetype rest setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype conf setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2
