@@ -4,33 +4,32 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'scrooloose/syntastic.git'
-Plugin 'ddollar/nerdcommenter'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'kien/ctrlp.vim'
+Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'flazz/vim-colorschemes'
-Plugin 'Raimondi/delimitMate'
-Plugin 'ecomba/vim-ruby-refactoring'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'tpope/vim-haml'
-Plugin 'slim-template/vim-slim'
-Plugin 'thoughtbot/vim-rspec'
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'vim-scripts/dbext.vim'
-Plugin 'sirver/ultisnips.git'
-Plugin 'honza/vim-snippets'
-" Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'nathanealkane/vim-indent-guides'
-" Plugin 'garbas/vim-snipmate'
-" Plugin 'magutsushi/tagbar'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'honza/vim-snippets'
+Plugin 'slim-template/vim-slim'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'Raimondi/delimitMate'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ddollar/nerdcommenter'
+Plugin 'scrooloose/syntastic.git'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'janko-m/vim-test'
+Plugin 'robbles/logstash'
+Plugin 'fatih/vim-go'
+Plugin 'pangloss/vim-javascript'
+Plugin 'isRuslan/vim-es6'
+Plugin 'diepm/vim-rest-console'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'SirVer/ultisnips'
 
 " Plugins need to be added before this line
 call vundle#end()
@@ -49,10 +48,18 @@ syntax on
 
 " highlight nonText ctermbg=None
 
+" Python Support
+let g:python_host_prog = '/usr/bin/python2.7'
+
 set noswapfile
 
-colorscheme seti
+set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
+" set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h11
+" set guifont=Inconsolata\ LGC\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono:h11
 
+" colorscheme molokai
+" colorscheme seti
+colorscheme ThemerVim
 
 syntax enable
 set number
@@ -65,6 +72,11 @@ set hlsearch
 autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype slim setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype coffee setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Filetype go setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
+autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 expandtab smarttab shiftwidth=2
+autocmd Filetype rest setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype conf setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " Leader
@@ -82,7 +94,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
+nnoremap <leader>gr :GoRun<CR>
 
 " Get rid of colorscheme bg
 syntax enable
@@ -98,3 +110,53 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
+
+" Airline
+set encoding=utf8
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>[ <Plug>AirlineSelectPrevTab
+nmap <leader>] <Plug>AirlineSelectNextTab
+
+" Vim Ruby Test
+let test#strategy = "neovim"
+let g:test#preserve_screen = 1
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
+
+" Vim Go Test
+nmap <silent> <leader>got :GoTest<CR>
+nmap <silent> <leader>gotf :GoTestFunc<CR>
+
+autocmd BufNewFile,BufRead *.slim set ft=slim
+
+let g:vrc_allow_get_request_body = 1
+
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
