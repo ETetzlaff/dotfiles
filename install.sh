@@ -11,6 +11,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 brew tap homebrew/services
 
 # Brews I might want
+brew install tmux
 brew install gpg
 brew install postgresql
 brew install mysql
@@ -23,7 +24,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 gem update --system
 
 # Install Neovim
-brew install neovim/neovim/neovim
+brew install neovim
 
 # Dein plugin management
 mkdir -p ~/.config/nvim/
