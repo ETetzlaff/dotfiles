@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/evan.tetzlaff/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=/Users/evantetzlaff/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/Users/evan.tetzlaff/.config/nvim/dein'))
+call dein#begin(expand('/Users/evantetzlaff/.config/nvim/dein'))
 
 " Let dein manage dein
 " Required:
@@ -38,6 +38,7 @@ call dein#add('isRuslan/vim-es6')
 call dein#add('diepm/vim-rest-console')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('SirVer/ultisnips')
+call dein#add('ervandew/supertab')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -94,6 +95,8 @@ set hlsearch
 " Ruby mode
 " autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=3 tabstop=2
 autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Filetype html setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd Filetype eruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype slim setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype coffee setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype go setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
@@ -184,3 +187,6 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" JSON Formatter
+com! FormatJSON %!python -m json.tool
