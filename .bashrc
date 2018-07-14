@@ -3,6 +3,7 @@ export PATH="$PATH:/usr/local/go/bin"
 export GOPATH="$HOME/Documents/go_stuffs"
 export GOROOT="$HOME/Documents/go_stuffs"
 export PATH="$PATH:/$GOROOT/bin"
+alias git=hub
 
 
 # Compares current branch against 'dev' branch to see what commits
@@ -14,3 +15,15 @@ function git_upstream() {
 }
 
 export PIP_REQUIRE_VIRTUALENV=true
+
+psql_deis()
+{
+    psql `DEIS_PROFILE=$1 deis config:list -a $2 | grep DATABASE_URL | while read c1 c2; do echo $c2; done`
+}
+
+
+# Setup employer specific environment
+COMPANY_FILE="$HOME/.companyrc"
+if [ -f $COMPANY_FILE ]; then
+  . $COMPANY_FILE
+fi
