@@ -12,13 +12,13 @@
   let s:shade6 = "#979EAB"
   let s:shade7 = "#ABB2BF"
   let s:accent0 = "#E06C75"
-  let s:accent1 = "#D19A66"
+  let s:accent1 = "#D194C4"
   let s:accent2 = "#E5C07B"
-  let s:accent3 = "#98C379"
+  let s:accent3 = "#C379C3"
   let s:accent4 = "#56B6C2"
   let s:accent5 = "#61AFEF"
-  let s:accent6 = "#C678DD"
-  let s:accent7 = "#BE5046"
+  let s:accent6 = "#AADD9A"
+  let s:accent7 = "#60BBBE"
   
   endif
   

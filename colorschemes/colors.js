@@ -1,13 +1,13 @@
 exports.colors = {
   dark: {
     accent0: '#E06C75',
-    accent1: '#D19A66',
+    accent1: '#D194C4',
     accent2: '#E5C07B',
-    accent3: '#98C379',
+    accent3: '#C379C3',
     accent4: '#56B6C2',
     accent5: '#61AFEF',
-    accent6: '#C678DD',
-    accent7: '#BE5046',
+    accent6: '#AADD9A',
+    accent7: '#60BBBE',
     shade0: '#282C34',
     shade1: '#393E48',
     shade2: '#4B515C',

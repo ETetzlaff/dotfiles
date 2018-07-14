@@ -30,6 +30,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'diepm/vim-rest-console'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'SirVer/ultisnips'
+Plugin 'ervandew/supertab'
 
 " Plugins need to be added before this line
 call vundle#end()
@@ -160,3 +161,6 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" JSON Formatter
+com! FormatJSON %!python -m json.tool
