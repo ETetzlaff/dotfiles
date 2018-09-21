@@ -37,7 +37,6 @@ call dein#add('pangloss/vim-javascript')
 call dein#add('isRuslan/vim-es6')
 call dein#add('diepm/vim-rest-console')
 call dein#add('easymotion/vim-easymotion')
-call dein#add('SirVer/ultisnips')
 call dein#add('ervandew/supertab')
 
 " You can specify revision/branch/tag.
@@ -99,7 +98,7 @@ autocmd Filetype html setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype eruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype slim setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype coffee setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
-autocmd Filetype go setlocal tabstop=4 softtabstop=0 noexpandtab smarttab shiftwidth=4
+autocmd FileType go setlocal noexpandtab shiftwidth=4 tabstop=4 autoindent
 autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 expandtab smarttab shiftwidth=2
 autocmd Filetype rest setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype conf setlocal tabstop=2 shiftwidth=2 softtabstop=2
@@ -122,6 +121,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 nnoremap <leader>gr :GoRun<CR>
+nnoremap <leader>gt :GoTest<CR>
 
 " Get rid of colorscheme bg
 syntax enable
@@ -184,9 +184,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " JSON Formatter
 com! FormatJSON %!python -m json.tool
