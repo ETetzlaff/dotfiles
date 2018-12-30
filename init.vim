@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/evantetzlaff/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/Users/evantetzlaff/.config/nvim/dein'))
+call dein#begin(expand('~/.config/nvim/dein'))
 
 " Let dein manage dein
 " Required:
@@ -82,8 +82,8 @@ set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
 " set guifont=Inconsolata\ LGC\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono:h11
 
 " colorscheme molokai
-" colorscheme seti
-colorscheme ThemerVim
+colorscheme seti
+" colorscheme ThemerVim
 
 syntax enable
 set number
