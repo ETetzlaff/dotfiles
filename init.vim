@@ -82,6 +82,7 @@ set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
 " set guifont=Inconsolata\ LGC\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono:h11
 
 " colorscheme molokai
+" colorscheme tesla
 colorscheme seti
 " colorscheme ThemerVim
 
@@ -190,3 +191,5 @@ let g:UltiSnipsEditSplit="vertical"
 
 " JSON Formatter
 com! FormatJSON %!python -m json.tool
+
+let g:go_version_warning=0
