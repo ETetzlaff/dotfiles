@@ -44,3 +44,14 @@ ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+
+# ChunkWM and skhd
+brew tap koekeishiya/formulae
+brew install koekeishiya/formulae/skhd
+brew install chunkwm
+
+ln -sf ~/dotfiles/.skhdrc ~/.skhdrc
+ln -sf ~/dotfiles/.chunkwmrc ~/.chunkwmrc
+
+# Kitty terminal
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
