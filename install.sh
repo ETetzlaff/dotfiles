@@ -7,14 +7,6 @@ xcode-select --install
 # Install Oh My Zshell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Get brew servies
-brew tap homebrew/services
-
-# Brews I might want
-brew install tmux
-brew install gpg
-brew install postgresql
-brew install mysql
 
 # Install RVM
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -22,9 +14,6 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 
 # Update rubygems..
 gem update --system
-
-# Install Neovim
-brew install neovim
 
 # Dein plugin management
 mkdir -p ~/.config/nvim/
@@ -45,13 +34,7 @@ ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-# ChunkWM and skhd
-brew tap koekeishiya/formulae
-brew install koekeishiya/formulae/skhd
-brew install chunkwm
-
-ln -sf ~/dotfiles/.skhdrc ~/.skhdrc
-ln -sf ~/dotfiles/.chunkwmrc ~/.chunkwmrc
-
 # Kitty terminal
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+sh ~/dotfiles/brews.sh
