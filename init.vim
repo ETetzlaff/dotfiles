@@ -50,7 +50,10 @@ call dein#add('vimwiki/vimwiki')
 call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
 call dein#add('junegunn/fzf.vim')
 
-" call dein#add('neovim/lsp')
+call dein#add('neovim/nvim-lsp')
+:lua << END
+  require'nvim_lsp'.pyls.setup{}
+END
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -120,6 +123,11 @@ autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype vimwiki setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
+" PEP-8 Ruler for .py files
+autocmd FileType python setlocal colorcolumn=79
+
+autocmd BufNewFile,BufRead *.slim set ft=slim
+
 " Leader
 let mapleader = ","
 
@@ -152,12 +160,6 @@ highlight Normal ctermbg=None
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=zip_codes'
 let g:dbext_default_profile = 'mysql_local'
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
-
 " Airline
 set encoding=utf8
 let g:airline_powerline_fonts = 1
@@ -177,23 +179,11 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>[ <Plug>AirlineSelectPrevTab
 nmap <leader>] <Plug>AirlineSelectNextTab
 
-" Vim Ruby Test
-" let test#strategy = "neovim"
-" let g:test#preserve_screen = 1
-" nmap <silent> <leader>tn :TestNearest<CR>
-" nmap <silent> <leader>tf :TestFile<CR>
-" nmap <silent> <leader>ts :TestSuite<CR>
-" nmap <silent> <leader>tl :TestLast<CR>
-" nmap <silent> <leader>tv :TestVisit<CR>
-
 " Vim Go Test
 nmap <silent> <leader>got :GoTest<CR>
 nmap <silent> <leader>gotf :GoTestFunc<CR>
 
-autocmd BufNewFile,BufRead *.slim set ft=slim
-
 let g:vrc_allow_get_request_body = 1
-
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -203,17 +193,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" Set ultisnips triggers
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
 " JSON Formatter
 com! FormatJSON %!python -m json.tool
 
-" PEP-8 Ruler for .py files
-autocmd FileType python setlocal colorcolumn=79
-
+" vim-markdown things
 let vim_markdown_preview_hotkey='<C-j>'
 let vim_markdown_preview_browser='Google Chrome'
 
@@ -234,34 +217,40 @@ vnoremap <leader>vl :VtrSendLinesToRunner<cr>
 
 
 """" VIM-LSP Python
-if executable('pyls')
-    " pip install python-language-server
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
+" if executable('pyls')
+"     " pip install python-language-server
+"     au User lsp_setup call lsp#register_server({
+"         \ 'name': 'pyls',
+"         \ 'cmd': {server_info->['pyls']},
+"         \ 'whitelist': ['python'],
+"         \ })
+" endif
 
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> <f2> <plug>(lsp-rename)
-    " refer to doc to add more commands
-endfunction
+" function! s:on_lsp_buffer_enabled() abort
+"     setlocal omnifunc=lsp#complete
+"     setlocal signcolumn=yes
+"     nmap <buffer> gd <plug>(lsp-definition)
+"     nmap <buffer> <f2> <plug>(lsp-rename)
+"     " refer to doc to add more commands
+" endfunction
 
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
+" augroup lsp_install
+"     au!
+"     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+"     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+" augroup END
 
-nnoremap <leader>ld :LspDeclaration<CR>
-nnoremap <leader>lref :LspReferences<CR>
+nnoremap <leader>ld  <cmd>lua vim.lsp.buf.definition()<CR>
+" nnoremap <leader>ld :LspDeclaration<CR>
+nnoremap <leader>lr :LspReferences<CR>
 nnoremap <leader>lca :LspCodeAction<CR>
 
-
-" let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-
-" let g:NERDSpaceDelims = 1
+" nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+" nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+" nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+" nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+" nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+" nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+" nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+" nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+" nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
