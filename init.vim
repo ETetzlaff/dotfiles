@@ -4,10 +4,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/evantetzlaff/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/Users/evantetzlaff/.config/nvim/dein'))
+call dein#begin(expand('~/.config/nvim/dein'))
 
 " Let dein manage dein
 " Required:
@@ -20,7 +20,6 @@ call dein#add('honza/vim-snippets')
 call dein#add('slim-template/vim-slim')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('Raimondi/delimitMate')
-call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('tpope/vim-rails')
 call dein#add('vim-ruby/vim-ruby')
 call dein#add('ddollar/nerdcommenter')
@@ -38,6 +37,20 @@ call dein#add('isRuslan/vim-es6')
 call dein#add('diepm/vim-rest-console')
 call dein#add('easymotion/vim-easymotion')
 call dein#add('ervandew/supertab')
+call dein#add('aserebryakov/vim-todo-lists')
+call dein#add('JamshedVesuna/vim-markdown-preview')
+call dein#add('stephpy/vim-yaml')
+call dein#add('uarun/vim-protobuf')
+call dein#add('christoomey/vim-tmux-runner')
+call dein#add('prabirshrestha/async.vim')
+call dein#add('prabirshrestha/vim-lsp')
+call dein#add('ryanolsonx/vim-lsp-python')
+call dein#add('vimwiki/vimwiki')
+
+call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
+call dein#add('junegunn/fzf.vim')
+
+" call dein#add('neovim/lsp')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -82,8 +95,9 @@ set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
 " set guifont=Inconsolata\ LGC\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono:h11
 
 " colorscheme molokai
-" colorscheme seti
-colorscheme ThemerVim
+colorscheme seti
+" colorscheme solarized-dark
+" colorscheme ThemerVim
 
 syntax enable
 set number
@@ -103,6 +117,7 @@ autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 expandtab smarttab 
 autocmd Filetype rest setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype conf setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd Filetype vimwiki setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 
 " Leader
@@ -115,6 +130,7 @@ nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>wq :wq<CR>
+nnoremap <leader>bd :bd<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -122,6 +138,10 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 nnoremap <leader>gr :GoRun<CR>
 nnoremap <leader>gt :GoTest<CR>
+nnoremap <leader>god :GoDef<CR>
+
+nnoremap <C-p> :GFiles<CR>
+
 
 " Get rid of colorscheme bg
 syntax enable
@@ -158,13 +178,13 @@ nmap <leader>[ <Plug>AirlineSelectPrevTab
 nmap <leader>] <Plug>AirlineSelectNextTab
 
 " Vim Ruby Test
-let test#strategy = "neovim"
-let g:test#preserve_screen = 1
-nmap <silent> <leader>tn :TestNearest<CR>
-nmap <silent> <leader>tf :TestFile<CR>
-nmap <silent> <leader>ts :TestSuite<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tv :TestVisit<CR>
+" let test#strategy = "neovim"
+" let g:test#preserve_screen = 1
+" nmap <silent> <leader>tn :TestNearest<CR>
+" nmap <silent> <leader>tf :TestFile<CR>
+" nmap <silent> <leader>ts :TestSuite<CR>
+" nmap <silent> <leader>tl :TestLast<CR>
+" nmap <silent> <leader>tv :TestVisit<CR>
 
 " Vim Go Test
 nmap <silent> <leader>got :GoTest<CR>
@@ -190,3 +210,58 @@ let g:UltiSnipsEditSplit="vertical"
 
 " JSON Formatter
 com! FormatJSON %!python -m json.tool
+
+" PEP-8 Ruler for .py files
+autocmd FileType python setlocal colorcolumn=79
+
+let vim_markdown_preview_hotkey='<C-j>'
+let vim_markdown_preview_browser='Google Chrome'
+
+
+" vim-tmux-runner setup
+nnoremap <leader>va :VtrAttachToPane<cr>
+nnoremap <leader>vl :VtrSendLinesToRunner<cr>
+vnoremap <leader>vl :VtrSendLinesToRunner<cr>
+" nnoremap <leader>ror :VtrReorientRunner<cr>
+" nnoremap <leader>sc :VtrSendCommandToRunner<cr>
+" nnoremap <leader>or :VtrOpenRunner<cr>
+" nnoremap <leader>kr :VtrKillRunner<cr>
+" nnoremap <leader>fr :VtrFocusRunner<cr>
+" nnoremap <leader>dr :VtrDetachRunner<cr>
+" nnoremap <leader>cr :VtrClearRunner<cr>
+" nnoremap <leader>fc :VtrFlushCommand<cr>
+" nnoremap <leader>sf :VtrSendFile<cr>
+
+
+"""" VIM-LSP Python
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> <f2> <plug>(lsp-rename)
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+nnoremap <leader>ld :LspDeclaration<CR>
+nnoremap <leader>lref :LspReferences<CR>
+nnoremap <leader>lca :LspCodeAction<CR>
+
+
+" let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+" let g:NERDSpaceDelims = 1
