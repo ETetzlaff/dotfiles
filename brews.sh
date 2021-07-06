@@ -11,8 +11,8 @@ brew install tmux
 # brew install mysql
 
 # ChunkWM and skhd
-brew tap koekeishiya/formulae
+# brew tap koekeishiya/formulae
 brew install koekeishiya/formulae/skhd
-brew install chunkwm
+# brew install chunkwm
 ln -sf ~/dotfiles/.skhdrc ~/.skhdrc
-ln -sf ~/dotfiles/.chunkwmrc ~/.chunkwmrc
+# ln -sf ~/dotfiles/.chunkwmrc ~/.chunkwmrc

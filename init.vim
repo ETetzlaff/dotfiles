@@ -1,3 +1,4 @@
+" lua require 'init'
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -27,6 +28,7 @@ call dein#add('scrooloose/syntastic.git')
 call dein#add('scrooloose/nerdtree.git')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-rhubarb')
 call dein#add('vim-airline/vim-airline')
 call dein#add('ryanoasis/vim-devicons')
 call dein#add('janko-m/vim-test')
@@ -43,16 +45,31 @@ call dein#add('stephpy/vim-yaml')
 call dein#add('uarun/vim-protobuf')
 call dein#add('christoomey/vim-tmux-runner')
 call dein#add('prabirshrestha/async.vim')
-call dein#add('prabirshrestha/vim-lsp')
-call dein#add('ryanolsonx/vim-lsp-python')
 call dein#add('vimwiki/vimwiki')
 
 call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
 call dein#add('junegunn/fzf.vim')
 
+call dein#add('RishabhRD/popfix')
+call dein#add('RishabhRD/nvim-cheat.sh')
+
 call dein#add('neovim/nvim-lsp')
+
+call dein#add('nvim-lua/popup.nvim')
+call dein#add('nvim-lua/plenary.nvim')
+call dein#add('nvim-telescope/telescope.nvim')
+
 :lua << END
-  require'nvim_lsp'.pyls.setup{}
+  require'nvim_lsp'.gopls.setup{}
+  require'nvim_lsp'.solargraph.setup{
+    settings = {
+      solargraph = {
+        definitions = true,
+        references = true,
+        completion = true
+      }
+    }
+  }
 END
 
 " You can specify revision/branch/tag.
@@ -93,10 +110,13 @@ let g:python_host_prog = '/usr/bin/python2.7'
 
 set noswapfile
 
-set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
+set guifont=SauceCodePro\ Nerd\ Font:h11
+" set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
+" set guifont=Sauce\ Code\ Pro\ Nerd\ Font:h11
 " set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete:h11
 " set guifont=Inconsolata\ LGC\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono:h11
 
+" colorscheme solarized
 " colorscheme molokai
 colorscheme seti
 " colorscheme solarized-dark
@@ -110,6 +130,7 @@ set nowrap
 set hlsearch
 " Ruby mode
 " autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=3 tabstop=2
+autocmd Filetype lua setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype html setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd Filetype eruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
@@ -148,7 +169,9 @@ nnoremap <leader>gr :GoRun<CR>
 nnoremap <leader>gt :GoTest<CR>
 nnoremap <leader>god :GoDef<CR>
 
-nnoremap <C-p> :GFiles<CR>
+" nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :Telescope git_files<CR>
+
 
 
 " Get rid of colorscheme bg
@@ -242,7 +265,8 @@ vnoremap <leader>vl :VtrSendLinesToRunner<cr>
 
 nnoremap <leader>ld  <cmd>lua vim.lsp.buf.definition()<CR>
 " nnoremap <leader>ld :LspDeclaration<CR>
-nnoremap <leader>lr :LspReferences<CR>
+" nnoremap <leader>lr :LspReferences<CR>
+nnoremap <leader>lr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <leader>lca :LspCodeAction<CR>
 
 " nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>

@@ -1,16 +1,16 @@
 # Install Xcode Command Line Tools
-xcode-select --install
+# xcode-select --install
 
 # Install Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # Install Oh My Zshell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 
 # Install RVM
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-\curl -sSL https://get.rvm.io | bash -s stable
+# gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+# \curl -sSL https://get.rvm.io | bash -s stable
 
 # Update rubygems..
 gem update --system
@@ -35,6 +35,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 # Kitty terminal
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+# curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
 sh ~/dotfiles/brews.sh
+echo 'cool'
