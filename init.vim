@@ -152,8 +152,8 @@ autocmd BufNewFile,BufRead *.slim set ft=slim
 " Leader
 let mapleader = ","
 
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gs :Git status<CR>
+nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>w :w<CR>
