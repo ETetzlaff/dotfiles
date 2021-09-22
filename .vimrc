@@ -8,29 +8,29 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'flazz/vim-colorschemes'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'honza/vim-snippets'
-Plugin 'slim-template/vim-slim'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'Raimondi/delimitMate'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-rails'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'ddollar/nerdcommenter'
-Plugin 'scrooloose/syntastic.git'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'janko-m/vim-test'
-Plugin 'robbles/logstash'
-Plugin 'fatih/vim-go'
-Plugin 'pangloss/vim-javascript'
-Plugin 'isRuslan/vim-es6'
-Plugin 'diepm/vim-rest-console'
-Plugin 'easymotion/vim-easymotion'
+" Plugin 'honza/vim-snippets'
+" Plugin 'slim-template/vim-slim'
+" Plugin 'bronson/vim-trailing-whitespace'
+" Plugin 'Raimondi/delimitMate'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'tpope/vim-rails'
+" Plugin 'vim-ruby/vim-ruby'
+" Plugin 'ddollar/nerdcommenter'
+" Plugin 'scrooloose/syntastic.git'
+" Plugin 'scrooloose/nerdtree.git'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'ryanoasis/vim-devicons'
+" Plugin 'janko-m/vim-test'
+" Plugin 'robbles/logstash'
+" Plugin 'fatih/vim-go'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'isRuslan/vim-es6'
+" Plugin 'diepm/vim-rest-console'
+" Plugin 'easymotion/vim-easymotion'
 " Plugin 'SirVer/ultisnips'
-Plugin 'ervandew/supertab'
+" Plugin 'ervandew/supertab'
 
 " Plugins need to be added before this line
 call vundle#end()
@@ -59,8 +59,7 @@ set guifont=Sauce\ Code\ Pro\ Nerd\ Font\ Complete:h11
 " set guifont=Inconsolata\ LGC\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono:h11
 
 " colorscheme molokai
-" colorscheme seti
-colorscheme ThemerVim
+colorscheme seti
 
 syntax enable
 set number
