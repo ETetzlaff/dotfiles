@@ -54,7 +54,7 @@ vim.cmd('nmap <leader>] <Plug>AirlineSelectNextTab')
 -- Vim Tmux Runner
 vim.api.nvim_set_keymap('n', '<leader>va', ':VtrAttachToPane<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>vl', ':VtrSendLinesToRunner<cr>', opts)
-vim.api.nvim_set_keymap('n', '<leader>vl', ':VtrSendLinesToRunner<cr>', opts)
+vim.api.nvim_set_keymap('v', '<leader>vl', ':VtrSendLinesToRunner<cr>', opts)
 
 -- LSP
 vim.api.nvim_set_keymap('n', '<leader>ld', ':lua vim.lsp.buf.definition()<CR>', opts)

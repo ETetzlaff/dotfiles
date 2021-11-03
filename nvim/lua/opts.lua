@@ -20,7 +20,7 @@ vim.cmd('set clipboard=unnamed')
 vim.cmd('set background=dark')
 vim.cmd('syntax on')
 
-vim.cmd('colorscheme seti')
+vim.cmd('colorscheme solarized-dark')
 vim.cmd('highlight Normal ctermbg=None')
 
 local opts = {
