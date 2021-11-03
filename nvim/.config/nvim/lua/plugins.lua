@@ -11,6 +11,7 @@ return require('packer').startup(
 		use 'fatih/vim-go'
 		use 'tpope/vim-rails'
 		use 'vim-ruby/vim-ruby'
+		use 'thoughtbot/vim-rspec'
 		use 'robbles/logstash'
 		use 'pangloss/vim-javascript'
 		use 'isRuslan/vim-es6'

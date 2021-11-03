@@ -59,3 +59,6 @@ vim.api.nvim_set_keymap('v', '<leader>vl', ':VtrSendLinesToRunner<cr>', opts)
 -- LSP
 vim.api.nvim_set_keymap('n', '<leader>ld', ':lua vim.lsp.buf.definition()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>lr', ':lua vim.lsp.buf.references()<CR>', opts)
+
+-- Rspec
+vim.api.nvim_set_keymap('n', '<leader>rs', ':call RunNearestSpec()<CR>', opts)

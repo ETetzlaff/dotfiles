@@ -20,7 +20,7 @@ vim.cmd('set clipboard=unnamed')
 vim.cmd('set background=dark')
 vim.cmd('syntax on')
 
-vim.cmd('colorscheme solarized-dark')
+vim.cmd('colorscheme seti')
 vim.cmd('highlight Normal ctermbg=None')
 
 local opts = {
@@ -54,3 +54,6 @@ vim.cmd('autocmd Filetype lua setlocal tabstop=2 shiftwidth=2 softtabstop=2')
 -- JSON Formatter with Python Support
 vim.cmd('let g:python_host_prog = "/usr/bin/python2.7"')
 vim.cmd('com! FormatJSON %!python -m json.tool')
+
+-- vim.cmd('let g:slime_target = "tmux"')
+-- vim.cmd('let g:slime_paste_file = "$HOME/.slime_paste"')
