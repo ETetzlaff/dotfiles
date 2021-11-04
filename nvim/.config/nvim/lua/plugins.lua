@@ -4,10 +4,10 @@ return require('packer').startup(
 	function()
 		use 'wbthomason/packer.nvim'
 
---     LSP
+    -- LSP
     use 'neovim/nvim-lspconfig'
 
---     Language Things
+    -- Language Things
 		use 'fatih/vim-go'
 		use 'tpope/vim-rails'
 		use 'vim-ruby/vim-ruby'
@@ -19,7 +19,7 @@ return require('packer').startup(
 		use 'uarun/vim-protobuf'
 
 
---     Utilities
+    -- Utilities
 		use 'flazz/vim-colorschemes'
 		use 'christoomey/vim-tmux-navigator'
 		use 'honza/vim-snippets'
@@ -37,9 +37,12 @@ return require('packer').startup(
 		use 'ervandew/supertab'
 		use 'christoomey/vim-tmux-runner'
 		use 'prabirshrestha/async.vim'
+
+		-- NVIM Specifics
 		use 'nvim-lua/popup.nvim'
 		use 'nvim-lua/plenary.nvim'
 		use 'nvim-treesitter/nvim-treesitter'
 		use 'nvim-telescope/telescope.nvim'
+		use 'ThePrimeagen/harpoon'
 	end
 )
