@@ -32,7 +32,6 @@ return require('packer').startup(
 		use 'airblade/vim-gitgutter'
 		use 'tpope/vim-fugitive'
 		use 'vim-airline/vim-airline'
-		use 'ryanoasis/vim-devicons'
 		use 'diepm/vim-rest-console'
 		use 'easymotion/vim-easymotion'
 		use 'ervandew/supertab'
@@ -42,8 +41,5 @@ return require('packer').startup(
 		use 'nvim-lua/plenary.nvim'
 		use 'nvim-treesitter/nvim-treesitter'
 		use 'nvim-telescope/telescope.nvim'
-		-- use { 'nvim-telescope/telescope.nvim',
-    --   requires = { { 'nvim-lua/plenary.nvim' } }
-    -- }
 	end
 )
