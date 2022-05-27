@@ -1,21 +1,13 @@
--- lsp = require('nvim_lsp')
--- 
--- lsp.gopls.setup{}
--- 
--- lsp.solargraph.setup{
---   settings = {
---     solargraph = {
---       definitions = true,
---       references = true,
---       completion = true
---     }
---   }
--- }
-
--- lsp.sumneko.setup{}
---
 lspconfig = require('lspconfig')
-lspconfig.gopls.setup{}
+lspsignature = require('lsp_signature')
+
+lspconfig.gopls.setup{
+	on_attach = function(client, bufnr)
+		lspsignature.on_attach()
+	end
+}
+
+lspconfig.rust_analyzer.setup{}
 
 lspconfig.solargraph.setup{
   settings = {

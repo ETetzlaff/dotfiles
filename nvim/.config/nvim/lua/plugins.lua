@@ -21,7 +21,12 @@ return require('packer').startup(
 
     -- Utilities
 		use 'flazz/vim-colorschemes'
+
+		-- TMUX things
 		use 'christoomey/vim-tmux-navigator'
+		use 'christoomey/vim-tmux-runner'
+
+		-- Snippets
 		use 'honza/vim-snippets'
 		use 'slim-template/vim-slim'
 		use 'bronson/vim-trailing-whitespace'
@@ -35,14 +40,19 @@ return require('packer').startup(
 		use 'diepm/vim-rest-console'
 		use 'easymotion/vim-easymotion'
 		use 'ervandew/supertab'
-		use 'christoomey/vim-tmux-runner'
 		use 'prabirshrestha/async.vim'
 
-		-- NVIM Specifics
+		-- NVIM Only
+		-- Basic utils
 		use 'nvim-lua/popup.nvim'
 		use 'nvim-lua/plenary.nvim'
 		use 'nvim-treesitter/nvim-treesitter'
 		use 'nvim-telescope/telescope.nvim'
+
+		-- Harpoon for easier maneuverability
 		use 'ThePrimeagen/harpoon'
+
+		-- LSP Function Signature
+		use 'ray-x/lsp_signature.nvim'
 	end
 )

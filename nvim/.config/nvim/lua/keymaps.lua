@@ -26,6 +26,7 @@ vim.api.nvim_set_keymap('n', '<leader>god', ':GoDef<CR>', opts)
 
 -- Telescope
 vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>tg', ':Telescope live_grep<CR>', opts)
 
 -- Airline
 vim.api.nvim_set_keymap('n', '<leader>1', '<Plug>AirlineSelectTab1', opts)
@@ -62,6 +63,7 @@ vim.api.nvim_set_keymap('n', '<leader>lr', ':lua vim.lsp.buf.references()<CR>', 
 
 -- Rspec
 vim.api.nvim_set_keymap('n', '<leader>rs', ':call RunNearestSpec()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>rf', ':call RunCurrentSpecFile()<CR>', opts)
 
 -- Harpooning - This might kill Airline for me
 vim.api.nvim_set_keymap('n', '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', opts)
