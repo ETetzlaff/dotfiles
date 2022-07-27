@@ -25,21 +25,7 @@ cmp.setup {
       },
       { "i", "c" }
     ),
-
-    ["<c-space>"] = cmp.mapping {
-      i = cmp.mapping.complete(),
-      c = function(
-        _ --[[fallback]]
-      )
-        if cmp.visible() then
-          if not cmp.confirm { select = true } then
-            return
-          end
-        else
-          cmp.complete()
-        end
-      end,
-    },
+		["<C-Space>"] = cmp.mapping.complete(),
 
 		-- run this for more help on getting away from tab complete
 		-- :help ins-completion
@@ -68,7 +54,6 @@ cmp.setup {
 				nvim_lsp = "[LSP]",
 				nvim_lua = "[api]",
 				path = "[path]",
-				gh_issues = "[issues]",
 			},
 		},
 	},
