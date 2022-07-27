@@ -32,6 +32,7 @@ cmp.setup {
 		-- run this for more help on getting away from tab complete
 		-- :help ins-completion
     ["<tab>"] = cmp.config.disable,
+	},
 
   sources = {
     { name = "nvim_lsp" },
