@@ -39,7 +39,6 @@ return require('packer').startup(
 		use 'vim-airline/vim-airline'
 		use 'diepm/vim-rest-console'
 		use 'easymotion/vim-easymotion'
-		use 'ervandew/supertab'
 		use 'prabirshrestha/async.vim'
 
 		-- NVIM Only
@@ -48,6 +47,18 @@ return require('packer').startup(
 		use 'nvim-lua/plenary.nvim'
 		use 'nvim-treesitter/nvim-treesitter'
 		use 'nvim-telescope/telescope.nvim'
+
+		use 'williamboman/nvim-lsp-installer'
+
+		-- nvim cmp stuff
+		use 'hrsh7th/nvim-cmp'
+		use 'hrsh7th/cmp-buffer'
+		use 'hrsh7th/cmp-path'
+		use 'hrsh7th/cmp-nvim-lsp'
+		use 'hrsh7th/cmp-nvim-lua'
+		use 'onsails/lspkind.nvim'
+
+		-- use 'saadparwaiz1/cmp_luasnip'
 
 		-- Harpoon for easier maneuverability
 		use 'ThePrimeagen/harpoon'
