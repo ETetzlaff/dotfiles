@@ -1,5 +1,5 @@
-lspconfig = require('lspconfig')
-lspsignature = require('lsp_signature')
+lspconfig = require("lspconfig")
+lspsignature = require("lsp_signature")
 
 lspconfig.gopls.setup{
 	on_attach = function(client, bufnr)
