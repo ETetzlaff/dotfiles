@@ -33,13 +33,6 @@ cmp.setup {
 		-- :help ins-completion
     ["<tab>"] = cmp.config.disable,
 
-    -- Testing
-    ["<c-q>"] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-  },
-
   sources = {
     { name = "nvim_lsp" },
     { name = "path" },
