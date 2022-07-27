@@ -25,7 +25,9 @@ cmp.setup {
       },
       { "i", "c" }
     ),
-		["<C-Space>"] = cmp.mapping.complete(),
+		-- what is preventing space from working on this?
+		-- ["<c-space>"] = cmp.mapping.complete(),
+		["<C-q>"] = cmp.mapping.complete(),
 
 		-- run this for more help on getting away from tab complete
 		-- :help ins-completion
