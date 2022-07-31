@@ -48,6 +48,8 @@ return require("packer").startup(
 		use "nvim-treesitter/nvim-treesitter"
 		use "nvim-telescope/telescope.nvim"
 
+		use "ibhagwan/nvim-lua"
+
 		use "williamboman/nvim-lsp-installer"
 
 		-- nvim cmp stuff
