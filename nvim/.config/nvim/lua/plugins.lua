@@ -67,5 +67,8 @@ return require("packer").startup(
 
 		-- LSP Function Signature
 		use "ray-x/lsp_signature.nvim"
+
+		-- Rust
+    use 'rust-lang/rust.vim'
 	end
 )
