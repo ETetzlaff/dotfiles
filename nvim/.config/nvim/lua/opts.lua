@@ -56,5 +56,14 @@ vim.cmd("let g:python_host_prog = \"/usr/bin/python2.7\"")
 vim.cmd("com! FormatJSON %!python -m json.tool")
 
 
--- Rust AutoFmt
+-- Rust Things
 vim.cmd("let g:rustfmt_autosave = 1")
+local rt = require('rust-tools')
+rt.setup({
+	server = {
+  	on_attach = function(_, bufnr)
+  		vim.keymap.set('n', '<C-space>', rt.hover_actions.hover_actions, { buffer = bufnr })
+  		vim.keymap.set('n', '<Leader>a', rt.code_action_group.code_action_group, { buffer = bufnr })
+  	end,
+  },
+})
