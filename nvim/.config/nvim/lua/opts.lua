@@ -57,6 +57,7 @@ vim.cmd("com! FormatJSON %!python -m json.tool")
 
 
 -- Go Things
+-- Be sure to install TS go :TSInstall go
 require("go").setup()
 -- Use the vim.api since goimport() through go.format adds a full second to startup for some reason.
 vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
