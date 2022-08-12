@@ -56,6 +56,12 @@ vim.cmd("let g:python_host_prog = \"/usr/bin/python2.7\"")
 vim.cmd("com! FormatJSON %!python -m json.tool")
 
 
+-- Go Things
+require("go").setup()
+-- Use the vim.api since goimport() through go.format adds a full second to startup for some reason.
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+-- require("go.format").goimport()
+
 -- Rust Things
 vim.cmd("let g:rustfmt_autosave = 1")
 local rt = require("rust-tools")
