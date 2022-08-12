@@ -58,7 +58,7 @@ vim.cmd("com! FormatJSON %!python -m json.tool")
 
 -- Rust Things
 vim.cmd("let g:rustfmt_autosave = 1")
-local rt = require('rust-tools')
+local rt = require("rust-tools")
 rt.setup({
 	server = {
   	on_attach = function(_, bufnr)

@@ -1,7 +1,7 @@
 lspconfig = require("lspconfig")
 lspsignature = require("lsp_signature")
 
-require('nvim-lsp-installer').setup({
+require("nvim-lsp-installer").setup({
 	automatic_installation = true,
 	ui = {
     icons = {
