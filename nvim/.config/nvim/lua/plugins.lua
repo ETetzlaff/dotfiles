@@ -8,7 +8,6 @@ return require("packer").startup(
     use "neovim/nvim-lspconfig"
 
     -- Language Things
-		use "fatih/vim-go"
 		use "tpope/vim-rails"
 		use "vim-ruby/vim-ruby"
 		use "thoughtbot/vim-rspec"
@@ -68,8 +67,10 @@ return require("packer").startup(
 		-- LSP Function Signature
 		use "ray-x/lsp_signature.nvim"
 
+		use "ray-x/go.nvim"
+
 		-- Rust
-    use 'rust-lang/rust.vim'
-		use 'simrat39/rust-tools.nvim'
+    use "rust-lang/rust.vim"
+		use "simrat39/rust-tools.nvim"
 	end
 )
