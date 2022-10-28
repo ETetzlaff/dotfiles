@@ -22,12 +22,14 @@ lspconfig.sumneko_lua.setup{}
 
 lspconfig.rust_analyzer.setup{}
 
--- lspconfig.solargraph.setup{
---   settings = {
---     solargraph = {
---       definitions = true,
---       references = true,
---       completion = true
---     }
---   }
--- }
+lspconfig.pylsp.setup{
+	settings = {
+		pylsp = {
+			plugins = {
+				pycodestyle = {
+					maxLineLength = 120,
+				}
+			}
+		}
+	}
+}

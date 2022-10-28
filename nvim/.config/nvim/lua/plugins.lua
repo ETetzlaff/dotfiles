@@ -72,5 +72,8 @@ return require("packer").startup(
 		-- Rust
     use "rust-lang/rust.vim"
 		use "simrat39/rust-tools.nvim"
+
+		-- Wiki
+		use "vimwiki/vimwiki"
 	end
 )

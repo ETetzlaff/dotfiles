@@ -25,6 +25,7 @@ vim.api.nvim_set_keymap("n", "<leader>gt", ":GoTest<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>god", ":GoDef<CR>", opts)
 
 -- Telescope
+vim.api.nvim_set_keymap("n", "<leader>t", ":Telescope<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>tg", ":Telescope live_grep<CR>", opts)
 
@@ -60,6 +61,8 @@ vim.api.nvim_set_keymap("v", "<leader>vl", ":VtrSendLinesToRunner<cr>", opts)
 -- LSP
 vim.api.nvim_set_keymap("n", "<leader>ld", ":lua vim.lsp.buf.definition()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>lr", ":lua vim.lsp.buf.references()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>lh", ":lua vim.lsp.buf.hover()<CR>", opts)
 
 -- Rspec
 vim.api.nvim_set_keymap("n", "<leader>rs", ":call RunNearestSpec()<CR>", opts)
