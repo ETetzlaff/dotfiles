@@ -75,3 +75,12 @@ rt.setup({
   },
 })
 rt.inlay_hints.enable()
+
+
+-- Obsidian plugin
+require("obsidian").setup({
+  dir = "~/main-vault",
+  completion = {
+    nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+  }
+})

@@ -75,5 +75,6 @@ return require("packer").startup(
 
 		-- Wiki
 		use "vimwiki/vimwiki"
+		use "epwalsh/obsidian.nvim"
 	end
 )
