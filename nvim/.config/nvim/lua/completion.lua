@@ -58,3 +58,6 @@ cmp.setup {
     ghost_text = true,
   },
 }
+
+
+-- HI NICK
