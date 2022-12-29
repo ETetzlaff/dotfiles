@@ -5,6 +5,8 @@ return require("packer").startup(
 		use "wbthomason/packer.nvim"
 
     -- LSP
+		use "williamboman/mason.nvim"
+		use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig"
 
     -- Language Things
@@ -48,8 +50,6 @@ return require("packer").startup(
 		use "nvim-telescope/telescope.nvim"
 
 		use "ibhagwan/nvim-lua"
-
-		use "williamboman/nvim-lsp-installer"
 
 		-- nvim cmp stuff
 		use "hrsh7th/nvim-cmp"
