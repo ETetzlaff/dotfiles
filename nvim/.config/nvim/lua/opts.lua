@@ -38,6 +38,7 @@ vim.cmd("let g:airline#extensions#tabline#show_splits = 0")
 vim.cmd("let g:airline#extensions#tabline#buffer_idx_mode = 1")
 
 -- Filetypes
+vim.cmd("autocmd BufRead,BufNewFile *.htm,*.html setlocal tabstop=2 shiftwidth=2 softtabstop=2")
 vim.cmd("autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2")
 vim.cmd("autocmd Filetype html setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2")
 vim.cmd("autocmd Filetype eruby setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2")
@@ -67,20 +68,28 @@ vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').
 vim.cmd("let g:rustfmt_autosave = 1")
 local rt = require("rust-tools")
 rt.setup({
-	server = {
-  	on_attach = function(_, bufnr)
-  		vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-  		vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-  	end,
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
   },
+	inlay_hints = {
+		auto = true,
+		show_parameter_hints = true,
+	},
 })
-rt.inlay_hints.enable()
+-- broken right now
+-- rt.inlay_hints.enable()
 
 
 -- Obsidian plugin
 require("obsidian").setup({
-  dir = "~/main-vault",
-  completion = {
-    nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
-  }
+	-- dir = "~/main-vault",
+	dir = "/mnt/c/Users/ReUhssurance/Documents/general-obsidian-vault",
+	completion = {
+		nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+	}
 })
