@@ -1,7 +1,13 @@
 -- Unlocks :Mason
-mason = require("mason").setup()
-mason_config = require("mason-lspconfig").setup {
-	"sumneko_lua", "rust_analyzer", "gopls"
+require("mason").setup {
+    ui = {
+        icons = {
+            package_installed = "✓"
+        }
+    }
+}
+require("mason-lspconfig").setup {
+	"lua_ls", "rust_analyzer", "gopls"
 }
 
 lspconfig = require("lspconfig")
@@ -13,7 +19,7 @@ lspconfig.gopls.setup{
 	end
 }
 
-lspconfig.sumneko_lua.setup{}
+lspconfig.lua_ls.setup{}
 
 lspconfig.rust_analyzer.setup{}
 
