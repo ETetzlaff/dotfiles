@@ -30,9 +30,10 @@ vim.api.nvim_set_keymap("n", "<leader>t", ":Telescope<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-p>", ":Telescope find_files<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>tg", ":Telescope live_grep<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>tc", ":Telescope commands<CR>", opts)
-vim.keymap.set('n', '<leader>sn', function()
-	builtin.find_files { cwd = vim.fn.stdpath 'config' }
-end, { desc = '[S]earch [N]eovim files' })
+vim.keymap.set("n", "<leader>sn", function()
+	builtin.find_files { cwd = vim.fn.stdpath "config" }
+end, { desc = "[S]earch [N]eovim files" })
+vim.api.nvim_set_keymap("n", "<leader>rl", ":source $MYVIMRC<CR>", opts)
 
 -- Airline
 vim.api.nvim_set_keymap("n", "<leader>1", "<Plug>AirlineSelectTab1", opts)
