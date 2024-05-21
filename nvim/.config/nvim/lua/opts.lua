@@ -84,12 +84,109 @@ rt.setup({
 -- broken right now
 -- rt.inlay_hints.enable()
 
-
 -- Obsidian plugin
 require("obsidian").setup({
-	-- dir = "~/main-vault",
-	dir = "/mnt/c/Users/ReUhssurance/Documents/general-obsidian-vault",
-	completion = {
-		nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
-	}
+  dir = "~/main-vault",
+	-- dir = "/mnt/c/Users/ReUhssurance/Documents/general-obsidian-vault",
+  completion = {
+    nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+  },
+	daily_notes = {
+		folder = "daily",
+		date_format = "%Y-%m-%d",
+		template = "daily.md", -- TODO
+	},
+	notes_subdir = "inbox",
+	new_notes_location = "notes_subdir",
+	templates = {
+		folder = "templates",
+		date_format = "%Y-%m-%d",
+		time_format = "%H:%M",
+	},
+	ui = {
+		enable = false,
+	},
+	note_id_func = function(title)
+		local suffix = ""
+		if title ~= nil then
+			suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+		else
+			for _ = 1, 4 do
+				suffix = suffix .. string.char(math.random(65, 90))
+			end
+
+		end
+		return tostring(os.date("%Y-%m-%d")) .. "-" .. suffix
+	end,
+	note_frontmatter_func = function(note)
+		if note.title then
+			note:add_alias(note.title)
+		end
+		local today = os.date("%Y-%m-%d")
+		note:add_tag(today)
+
+		local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+
+		if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+			for k, v in pairs(note.metadata) do
+				out[k] = v
+			end
+		end
+
+		return out
+	end,
+	follow_url_func = function(url)
+		vim.fn.jobstart({"open", url})
+    -- vim.fn.jobstart({"xdg-open", url})  -- linux
+	end,
 })
+
+
+-- Copilot disable by default
+-- require('copilot').setup({
+--   panel = {
+--     enabled = true,
+--     auto_refresh = false,
+--     keymap = {
+--       jump_prev = "[[",
+--       jump_next = "]]",
+--       accept = "<CR>",
+--       refresh = "gr",
+--       open = "<M-CR>"
+--     },
+--     layout = {
+--       position = "bottom", | top | left | right
+--       ratio = 0.4
+--     },
+--   },
+--   suggestion = {
+--     enabled = true,
+--     auto_trigger = false,
+--     debounce = 75,
+--     keymap = {
+--       accept = "<M-l>",
+--       accept_word = false,
+--       accept_line = false,
+--       next = "<M-]>",
+--       prev = "<M-[>",
+--       dismiss = "<C-]>",
+--     },
+--   },
+--   filetypes = {
+--     yaml = false,
+--     markdown = false,
+--     help = false,
+--     gitcommit = false,
+--     gitrebase = false,
+--     hgcommit = false,
+--     svn = false,
+--     cvs = false,
+--     ["."] = false,
+--     envrc = false,
+--     env = false
+--   },
+--   copilot_node_command = 'node', Node.js version must be > 18.x
+--   server_opts_overrides = {},
+-- })
+
+-- vim.cmd(":Copilot disable")

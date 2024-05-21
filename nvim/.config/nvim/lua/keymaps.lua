@@ -10,7 +10,7 @@ vim.api.nvim_set_keymap("n", "<leader>q", ":q<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>gs", ":Git status<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>gb", ":Git blame<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>gd", ":Git diff<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>n", ":NERDTree<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>n", ":NERDTreeFind<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>w", ":w<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>q", ":q<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>wq", ":wq<CR>", opts)
@@ -67,12 +67,9 @@ vim.api.nvim_set_keymap("v", "<leader>vl", ":VtrSendLinesToRunner<cr>", opts)
 -- LSP
 vim.api.nvim_set_keymap("n", "<leader>ld", ":lua vim.lsp.buf.definition()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>lr", ":lua vim.lsp.buf.references()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>la", ":lua vim.lsp.buf.code_action()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>lh", ":lua vim.lsp.buf.hover()<CR>", opts)
-
--- Rspec
-vim.api.nvim_set_keymap("n", "<leader>rs", ":call RunNearestSpec()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>rf", ":call RunCurrentSpecFile()<CR>", opts)
 
 -- Harpooning - This might kill Airline for me
 vim.api.nvim_set_keymap("n", "<leader>ha", ":lua require(\"harpoon.mark\").add_file()<CR>", opts)
@@ -82,5 +79,12 @@ vim.api.nvim_set_keymap("n", "<leader>h3", ":lua require(\"harpoon.ui\").nav_fil
 vim.api.nvim_set_keymap("n", "<leader>hq", ":lua require(\"harpoon.ui\").toggle_quick_menu()<CR>", opts)
 
 
--- Obsidian keymaps
-vim.api.nvim_set_keymap("n", "<leader>os", ":ObsidianSearch<CR>", opts)
+-- Obsidian
+vim.keymap.set("n", "<leader>os", ":ObsidianSearch<CR>", opts)
+vim.keymap.set("n", "<leader>osb", ":ObsidianBacklinks<CR>", opts)
+vim.keymap.set("n", "<leader>ost", ":ObsidianToday<CR>", opts)
+vim.keymap.set("n", "<leader>osy", ":ObsidianYesterday<CR>", opts)
+vim.keymap.set("n", "<leader>osn", ":ObsidianNew<CR>", opts)
+vim.keymap.set("n", "<leader>osv", ":cd /Users/evantetzlaff/main-vault<cr>:NERDTree<cr>")
+vim.keymap.set("n", "<leader>ok", ":!mv '%:p' /Users/evantetzlaff/main-vault/permanent<cr>:bd<cr>")
+vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")

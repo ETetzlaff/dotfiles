@@ -10,14 +10,13 @@ return require("packer").startup(
     use "neovim/nvim-lspconfig"
 
     -- Language Things
-		use "tpope/vim-rails"
-		use "vim-ruby/vim-ruby"
-		use "thoughtbot/vim-rspec"
-		use "robbles/logstash"
 		use "pangloss/vim-javascript"
 		use "isRuslan/vim-es6"
 		use "stephpy/vim-yaml"
+		use "hashivim/vim-terraform"
 		use "uarun/vim-protobuf"
+		use 'leafgarland/typescript-vim'
+		use 'evanleck/vim-svelte'
 
 
     -- Utilities
@@ -35,7 +34,7 @@ return require("packer").startup(
 		use "ddollar/nerdcommenter"
 		use "vim-syntastic/syntastic"
 		use "preservim/nerdtree"
-		use "airblade/vim-gitgutter"
+		-- use "airblade/vim-gitgutter"
 		use "tpope/vim-fugitive"
 		use "vim-airline/vim-airline"
 		use "diepm/vim-rest-console"
@@ -74,7 +73,13 @@ return require("packer").startup(
 		use "simrat39/rust-tools.nvim"
 
 		-- Wiki
-		use "vimwiki/vimwiki"
+		-- use "vimwiki/vimwiki"
+		use "ixru/nvim-markdown"
 		use "epwalsh/obsidian.nvim"
+		use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "vimwiki", "markdown" } end, ft = { "markdown" }, })
+
+		-- Copilot
+		-- use "zbirenbaum/copilot.lua"
+
 	end
 )
