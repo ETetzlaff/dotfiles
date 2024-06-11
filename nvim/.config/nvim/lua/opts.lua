@@ -17,11 +17,12 @@ vim.wo.wrap = false
 vim.cmd("set mouse=a")
 vim.cmd("set t_Co=256")
 vim.cmd("set clipboard=unnamed")
-vim.cmd("set background=dark")
+-- vim.cmd("set background=dark")
 vim.cmd("syntax on")
 
 vim.cmd("colorscheme seti")
-vim.cmd("highlight Normal ctermbg=None")
+vim.cmd("highlight Normal ctermbg=None guibg=None")
+vim.cmd("highlight NonText ctermbg=None guibg=None")
 
 local opts = {
 	noremap = true,
@@ -86,8 +87,8 @@ rt.setup({
 
 -- Obsidian plugin
 require("obsidian").setup({
-  dir = "~/main-vault",
-	-- dir = "/mnt/c/Users/ReUhssurance/Documents/general-obsidian-vault",
+	dir = "~/main-vault",
+	-- dir = "~/google-drive/obsidian-main-vault",
   completion = {
     nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
   },
