@@ -8,8 +8,9 @@ return {
   --   },
   --   config = function(_, opts)
   --     vim.o.termguicolors = true
+  --     vim.cmd("hi Normal guibg='#022029'")
   --     -- vim.o.background = 'dark'
-  --     --
+
   --     require('solarized').setup(opts)
   --     vim.cmd.colorscheme 'solarized'
   --   end,
