@@ -1,6 +1,7 @@
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'easymotion/vim-easymotion', -- ,,w tokenizer
+  'preservim/nerdcommenter', -- easy commenting maps
 
   require 'plugins/lsp',
   require 'plugins/treesitter',
