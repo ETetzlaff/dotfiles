@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>osb", ":ObsidianBacklinks<CR>", opts)
 vim.keymap.set("n", "<leader>ost", ":ObsidianToday<CR>", opts)
 vim.keymap.set("n", "<leader>osy", ":ObsidianYesterday<CR>", opts)
 vim.keymap.set("n", "<leader>osn", ":ObsidianNew<CR>", opts)
-vim.keymap.set("n", "<leader>ok", ":!mv '%:p' /home/reuh/main-vault/permanent<cr>:bd<cr>")
+vim.keymap.set("n", "<leader>ok", ":!mv '%:p' ~/main-vault/permanent<cr>:bd<cr>")
 vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")
 
 return {

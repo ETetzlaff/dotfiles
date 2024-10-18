@@ -10,6 +10,9 @@ require('lazy').setup({
   require 'plugins/colorscheme',
   require 'plugins/tmux-navigator',
   require 'plugins/obsidian',
+  require 'plugins/harpoon',
+  require 'plugins/lualine',
+  require 'plugins/git',
 }, {
     ui = {
       -- If you are using a Nerd Font: set icons to an empty table which will use the
